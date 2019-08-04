@@ -76,14 +76,14 @@ sets or checks one bit in each lane.
 #### Algorithm
 The algorithm requires two prerequisite conditions:
 
-1. The number of bits in the bitset of a multi-block Bloom filter `m` must be a power of 2. So it
+1. The number of bits of a multi-block Bloom filter `m` must be a power of 2. So it
 needs round up operation in the specific implementation.
 
 2. The number of blocks `n`, which is equal to `m/256`, must be a power of 2. 
 
 
 ##### Lookup in a block
-As mentioned above, the least 32 bits of the first [hash](#Hash Function) value `l` along with the salt
+As mentioned above, the least 32 bits of the first [hash](#Hash-Function) value `l` along with the salt
 values are used to compute the bit to set in each lane of the block. It constructs
 eight different hash functions as described in
 [Multiplicative hashing](https://en.wikipedia.org/wiki/Hash_function#Multiplicative_hashing):
